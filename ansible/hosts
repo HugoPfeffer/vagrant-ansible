@@ -1,0 +1,8 @@
+[master]
+172.17.177.39 ansible_user=vagrant 
+
+[wordpress]
+172.17.177.40 ansible_user=vagrant ansible_ssh_private_key_file="/home/vagrant/wordpress_key"
+
+[db]
+172.17.177.42 ansible_user=vagrant ansible_ssh_private_key_file="/home/vagrant/mysql_key"
