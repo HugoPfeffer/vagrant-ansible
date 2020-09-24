@@ -11,11 +11,11 @@
 </h2>
 
 <p align="center">
-    <img alt="Repository Size" src="https://img.shields.io/github/repo-size/HugoPfeffer/[repo-name]">
-    <img alt="Top Language" src="https://img.shields.io/github/languages/top/HugoPfeffer/[repo-name]">
+    <img alt="Repository Size" src="https://img.shields.io/github/repo-size/HugoPfeffer/vagrant-ansible">
+    <img alt="Top Language" src="https://img.shields.io/github/languages/top/HugoPfeffer/vagrant-ansible">
     <img alt="Made By" src="https://img.shields.io/badge/Made%20By-Hugo%20Pfeffer-red">
-    <img alt="License" src="https://img.shields.io/github/license/HugoPfeffer/[repo-name]">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/HugoPfeffer/[repo-name]?style=social">
+    <img alt="License" src="https://img.shields.io/github/license/HugoPfeffer/vagrant-ansible">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/HugoPfeffer/vagrant-ansible?style=social">
 </p>
 
 </br>
