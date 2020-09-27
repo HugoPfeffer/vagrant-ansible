@@ -11,7 +11,8 @@
 </h2>
 
 <p align="center">
-    <img alt="CentOS Version" src="https://img.shields.io/badge/centOS-8-green">
+    <img alt="CentOS Version" src="https://img.shields.io/badge/Linux-CentOS8-green">
+    <img alt="CentOS Version" src="https://img.shields.io/badge/Linux-Ubuntu-green">
     <img alt="Made By" src="https://img.shields.io/badge/Made%20By-Hugo%20Pfeffer-red">
     <img alt="License" src="https://img.shields.io/github/license/HugoPfeffer/vagrant-ansible">
     <!-- <img alt="Stargazers" src="https://img.shields.io/github/stars/HugoPfeffer/vagrant-ansible?style=social"> -->
@@ -21,7 +22,7 @@
 </br>
 <h2> Projeto </h2>
 
-Projeto foi realizado graças a counteúdos e à documentação das tecnologias utilizadas.
+Projeto foi realizado graças a counteúdos entrontrados online e à documentação das tecnologias utilizadas.
 Foi utilizado  como máquina controladora (master) uma Virtual Machine, provisionada com Vagrant, sendo o Linux CentOS utlizado como Sistema Operacional principal. Já os nós (slaves), foi utilizado o Linux Ubuntu como Sistema Operacional principal. 
 
 Neste projeto fui capaz de aprender e utilizar de forma profissional os seguintes métodos fornecidos pelas respectivas ferramentas:
@@ -36,6 +37,7 @@ Neste projeto fui capaz de aprender e utilizar de forma profissional os seguinte
     <li>Utilização das chaves SSH</li>
     <li>Adicionar provisões (como Ansible ou Puppet)</li>
     <li>Atualizar pacotes</li>
+    <li>Criar Triggers (gatilhos)</li>
     <li>Criar pastas compartilhadas</li>
 </ul>
 
@@ -48,6 +50,7 @@ Neste projeto fui capaz de aprender e utilizar de forma profissional os seguinte
     <li>Criar roles</li>
     <li>Criar dependencias</li>
     <li>Criar variáveis e variáveis default</li>
+    <li>Alteração e configurações do SO usado</li>
     <li>Configurações das provisões (como MySQL e Wordpress)</li>
 </ul>
 
