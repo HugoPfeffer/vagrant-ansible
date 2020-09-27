@@ -3,11 +3,11 @@
   roles:
     - mysql
 
-    
 - hosts: wordpress  
-
   roles:
     - webserver  
     - wordpress
     
-  
+- hosts: docker 
+  roles:
+    - docker

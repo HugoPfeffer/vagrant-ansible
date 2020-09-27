@@ -1,0 +1,64 @@
+# Master vars
+$install_ansible = <<-SCRIPT
+  sudo dnf install -y epel-release && sudo dnf install -y ansible && \
+  mkdir /home/vagrant/keys
+SCRIPT
+
+
+Vagrant.configure("2") do |config|
+    config.vm.provider "virtualbox" do |v|
+      v.memory = 1024
+    end
+    config.vm.synced_folder ".vagrant/machines/", "/home/vagrant/.vagrant"
+    config.vm.synced_folder ".", "/vagrant", disabled: true
+
+
+
+    # Box de Ansible (master)
+    config.vm.define 'centos' do |master|
+      master.vm.box = "generic/centos8"
+      master.vm.synced_folder ".", "/home/vagrant/shared-host"
+      master.vm.synced_folder ".", "/vagrant", disabled: true
+      master.vm.provider "virtualbox" do |v|
+        v.memory = 1024
+      end
+
+      master.vm.provision "shell", inline: "echo alias clear_hosts='> /home/vagrant/.ssh/known_hosts' >> /home/vagrant/.bashrc"
+      master.vm.provision "shell", inline: $install_ansible, privileged: false 
+
+      master.vm.network "private_network", ip: "172.17.177.39"
+      master.vm.hostname = 'centos.local'
+    end
+  
+
+    # Box de Wordpress
+    config.vm.define "wordpress", autostart: false do |node1|
+      node1.vm.box = "ubuntu/trusty64"
+      node1.vm.network "private_network", ip: "172.17.177.40"
+      node1.trigger.after :up do |trigger|
+        trigger.warn = "Escravo wordpress online!"
+      end
+      node1.vm.hostname = 'wordpress.local'      
+    end
+
+    # Box de MySQL
+    config.vm.define "mysql", autostart: false do |node2|
+      node2.vm.box = "ubuntu/trusty64"
+      node2.vm.network "private_network", ip: "172.17.177.42"
+      node2.trigger.after :up do |trigger|
+        trigger.warn = "Escravo mysql online!"
+      end
+      node2.vm.hostname = 'mysql.local'
+    end
+
+    # Box de Docker
+    config.vm.define "docker" do |node3|
+      node3.vm.box = "generic/centos8"
+      node3.vm.network "private_network", ip: "172.17.177.43"
+      node3.trigger.after :up do |trigger|
+        trigger.warn = "Escravo docker online!"
+      end
+      node3.vm.hostname = 'docker.local'
+    end
+  
+end
